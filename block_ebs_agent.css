@@ -1,0 +1,224 @@
+/**
+	COMMON STYLES
+*/
+div.ebs_spacer {
+ font-size:1px;
+ height:1px;
+ clear:both;
+}
+
+/**
+	BLOCK STYLES
+*/
+
+div.ebs_agent_block p {
+	margin:0px 0px 5px 0px;
+}
+
+div.ebs_agent_block td.event {
+	width:175px;
+	padding:1px;
+}
+
+div.ebs_agent_block td.mark {
+	padding:1px;
+	width:15px;
+	text-align:center;
+}
+
+/**
+	CONFIG STYLES
+*/
+.ebs_config_main fieldset {
+	border-width:0px;
+	background-color:#FCFCFC;
+	border:solid 1px #999999;	
+	margin-bottom:10px;
+}
+
+.ebs_config_main fieldset legend {
+	background-color:#EFEFEF;
+	border:solid 1px #666666;
+	padding:2px 10px 2px 10px;
+}
+
+.ebs_config_main label {
+	display:block;			
+	clear:both;
+	margin-bottom:5px;
+}
+
+.ebs_config_main label span {
+	margin-top:1px;
+	display:block;
+	float:left;
+	width:150px;
+}
+
+.ebs_config_main label span span.required, .ebs_config_main p.notes span.required {
+	display:inline;
+	color:red;
+	float:none;
+}
+
+.ebs_config_main label input {
+	float:left;	
+	border:solid 1px #666666;
+}
+
+.ebs_config_main label span.error {
+	margin-left:10px;
+	color:red;
+	font-style:italic;
+	width:300px;
+}
+
+.ebs_config_main .submit_button {	
+	margin-left:160px;
+}
+
+.ebs_config_main h3.notes {
+	margin:0px 0px 5px 15px;	
+}
+
+.ebs_config_main p.notes {
+	margin:0px 0px 10px 25px;
+}
+
+/**
+	REGISTER STYLES
+*/
+table.ebs_register {
+	padding:2px;
+	border-collapse:separate;
+	border-spacing:2px;
+	width:960px;
+	margin:0px auto 0px auto;
+}
+
+table.ebs_register td {
+	padding:1px;		
+}
+
+table.ebs_register thead td {
+	background-color:#EFEFEF;	
+	border-bottom:solid 1px #666666;
+}
+
+table.ebs_register thead td.today {
+	background-color:#DDDDDD;
+}
+
+table.ebs_register img {	
+	vertical-align:middle;
+	margin:1px;
+	margin-left:4px;	
+}
+
+table.ebs_register a img {
+	border-width:0px;
+}
+
+table.ebs_register .centered {
+	text-align:center;
+}
+
+table.ebs_register .right {
+	text-align:right;
+}
+
+table.ebs_register tr.alternate td {
+	background-color:#EFEFEF;
+}
+
+table.ebs_register tr.unconfirmed td span.learner_identity {
+	font-style:italic;
+}
+
+table.ebs_register .inactive, table.ebs_register tr.alternate td.inactive {
+	background-color:#DDDDDD;
+}
+
+table.ebs_register input {
+	border:solid 1px #666666;
+}
+
+div.ebs_register_footer {
+	width:960px;
+	margin:10px auto 0px auto;	
+}
+
+div.ebs_register_footer .buttons {
+	width:220px;
+	float:right;
+	text-align:right;	
+}
+
+div.ebs_register_footer .buttons button {
+	margin:0px 2px 0px 2px;
+}
+
+div.ebs_register_footer .buttons button.default {
+	font-weight:bold;
+}
+
+div.ebs_register_footer .options {
+	width:600px;
+	float:left;	
+	line-height:150%;
+}
+
+div.ebs_errors {
+	width:500px;	
+	margin:5px auto 5px auto;
+	display:none;
+}
+
+div.ebs_errors span {
+	color:#DD0000;
+}
+
+div.ebs_errors ul {
+	list-style-type:circle;
+}
+
+div.ebs_errors ul li {
+	color:#DD0000;
+}
+
+img.learner_photo {
+	width:65px;
+	height:65px;
+	border:solid 1px #666666;
+	margin:1px;
+}
+
+/**
+	PROGRESS CODE CHANGE STYLES
+*/
+
+div.ebs_progress_code_change label {
+	display:block;
+	float:left;
+	clear:both;
+	width:350px;
+	margin-bottom:5px;
+}
+
+div.ebs_progress_code_change span {
+	float:left;
+}
+
+div.ebs_progress_code_change label span.title {
+	display:block;
+	width:150px;	
+	margin-bottom:5px;	
+}
+
+div.ebs_progress_code_change label input, div.ebs_progress_code_change select {
+	float:left;	
+}
+
+div.ebs_progress_code_change input.button {	
+	margin-left:150px;
+}
