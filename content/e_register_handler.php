@@ -10,7 +10,6 @@ include_once("../../../config.php");
 include_once("../lib/ebs_utility.php");
 include_once("../lib/ebs_registers_utility.php");
 include_once("../lib/ebs_user.php");
-require_once("../lib/fetch_db_config.php");
 
 //Get some information about the register being submitted
 if(isset($_POST["register_event_slot_id"]) && ebs_utility::is_integer($_POST["register_event_slot_id"])) {
@@ -37,7 +36,7 @@ require_login();
 
 //Get user information
 $ebs_user = new ebs_user($USER->username);
-$ebs_user->configure($ebs_db_host, $ebs_db_user, $ebs_db_password);
+$ebs_user->configure($CFG->db_host_name, $CFG->db_user_name, $CFG->db_password);
 $ebs_user->load();
 
 //Make sure they are actually a member of staff and can mark this register

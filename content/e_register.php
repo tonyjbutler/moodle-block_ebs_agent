@@ -8,7 +8,6 @@ include_once("../../../config.php");
 include_once("../lib/ebs_utility.php");
 include_once("../lib/ebs_registers_utility.php");
 include_once("../lib/ebs_user.php");
-require_once("../lib/fetch_db_config.php");
 
 //Make sure the user is logged in 
 require_login();
@@ -32,7 +31,7 @@ if(isset($_GET["display_photos"]) && $_GET["display_photos"] == "1") {
 
 //Make sure the person logged in can actually access this information
 $ebs_user = new ebs_user($USER->username);
-$ebs_user->configure($ebs_db_host, $ebs_db_user, $ebs_db_password);
+$ebs_user->configure($CFG->db_host_name, $CFG->db_user_name, $CFG->db_password);
 $ebs_user->load();
 
 if(!$ebs_user->is_member_of_staff()) {

@@ -28,13 +28,11 @@ class ebs_utility {
 	*/
 	public static function connect() {
 	
-		global $ebs_db_host;
-		global $ebs_db_user;
-		global $ebs_db_password;
-		
-		return self::get_connection($ebs_db_host, $ebs_db_user, $ebs_db_password);
-	}	
+		global $CFG;
 	
+		return self::get_connection($CFG->db_host_name, $CFG->db_user_name, $CFG->db_password);
+	}
+
 	/**
 	 Gets a connection to the given database.
 	*/

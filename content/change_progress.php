@@ -8,7 +8,6 @@
 include_once("../../../config.php");
 include_once("../lib/ebs_utility.php");
 include_once("../lib/ebs_registers_utility.php");
-require_once("../lib/fetch_db_config.php");
 
 //Get some information on what we're looking at
 $index = -1;

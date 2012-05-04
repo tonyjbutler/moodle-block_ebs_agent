@@ -1,0 +1,91 @@
+<link rel="stylesheet" type="text/css" href="../blocks/ebs_agent/block_ebs_agent.css" />
+<script type="text/javascript" src="../blocks/ebs_agent/block_ebs_agent.js"></script>
+
+<div class="ebs_config_main">
+
+	<h3 class="notes">Notes</h3>
+	<p class="notes">		
+		Required fields are denoted by a <span class="required">*</span>.<br />
+		Hover the mouse over any field to see details of what the field does etc.
+	</p>
+
+	<fieldset>
+		<legend>Database details</legend>
+	
+		<label for="db_host_name">
+			<span>
+				TNS name <span class="required">*</span> :
+			</span>
+			
+			<input type="text" size="30" id="db_host_name" name="db_host_name" value="<?php echo $CFG->db_host_name; ?>" />
+			
+			<span class="error" style="display:none;" id="db_host_name_error">
+			</span>
+			
+			&nbsp;
+		</label>
+		
+		<label for="db_user_name">
+			<span>
+				User name <span class="required">*</span> :
+			</span>
+			
+			<input type="text" size="30" id="db_user_name" name="db_user_name" value="<?php echo $CFG->db_user_name; ?>" />
+			
+			<span class="error" style="display:none;" id="db_user_name_error">
+			</span>
+			
+			&nbsp;
+		</label>
+		
+		<label for="db_password">
+			<span>
+				Password <span class="required">*</span> :
+			</span>
+				
+			<input type="password" size="30" id="db_password" name="db_password" value="<?php echo $CFG->db_password; ?>" />
+			
+			<span class="error" style="display:none;" id="db_password_error">			
+			</span>
+			
+			&nbsp;
+		</label>	
+	
+	</fieldset>
+	
+	<fieldset>
+		<legend>Display settings</legend>
+		
+		<label for="preferred_width">
+			<span>
+				Block width (pixels) :
+			</span>
+			
+			<input type="text" size="5" maxlength="4" id="preferred_width" name="preferred_width" value="<?php echo $CFG->preferred_width; ?>" />
+			
+			<span class="error" style="display:none" id="preferred_width_error">
+			</span>
+			
+			&nbsp;
+		</label>
+		
+		<label for="header_image_url">
+			<span>
+				Header image URL :
+			</span>
+			
+			<input type="text" size="30" maxlength="255" id="header_image_url" name="header_image_url" value="<?php echo $CFG->header_image_url; ?>" />
+		</label>
+		
+		<label for="header_text">
+			<span>
+				Header text :
+			</span>
+			
+			<input type="text" size="30" maxlength="255" id="header_text" name="header_text" value="<?php echo $CFG->header_text; ?>" />
+		</label>
+	</fieldset>
+	
+	<div class="spacer">&nbsp;</div>	
+	<input type="submit" class="submit_button" value="<?php print_string("savechanges"); ?>" onclick="return do_global_config_validation();" />
+</div>
