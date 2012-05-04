@@ -96,9 +96,9 @@ function do_global_config_validation() {
 		
 			var width = parseInt(widthField.value);
 			
-			if(width < 200 || width > 1000) {
+			if(width < 180 || width > 210) {
 			
-				do_display_validation_message("preferred_width", "Width must be between 200 and 1000.");
+				do_display_validation_message("preferred_width", "Width must be between 180 and 210.");
 				result = false;
 			
 			}

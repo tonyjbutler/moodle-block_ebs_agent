@@ -25,7 +25,7 @@ class block_ebs_agent extends block_base {
 	function init() {	
 		
 		$this->title = "e-Registers";
-		$this->version = 1;
+		$this->version = 2009061100;
 	
 	}
 	
@@ -71,7 +71,7 @@ class block_ebs_agent extends block_base {
 					$html .= "<p style=\"text-align:center;\">";				
 					
 					if(!empty($header_image)) {
-						$html .= "<img style=\"width:45px;height:45px;vertical-align:middle;margin:3px;\" src=\"" . $CFG->header_image_url . "\" />";				
+						$html .= "<img style=\"width:45px;height:45px;vertical-align:middle;margin-right:3px;\" src=\"" . $CFG->header_image_url . "\" />";
 					}
 					
 					if(!empty($header_text)) {
@@ -82,9 +82,9 @@ class block_ebs_agent extends block_base {
 					
 				}
 				
-				$html .= "<p style=\"text-align:center;\"><strong>" . date("dS M Y") . "</strong></p>";
+				$html .= "<p style=\"text-align:center;\"><strong>" . date("D jS M Y") . "</strong></p>";
 				$html .= "<p style=\"text-align:center;\"><strong>" . $USER->firstname . " " . $USER->lastname . "</strong></p>";
-				$html .= "<p style=\"text-align:center;\">Today's unmarked e-registers</p>";
+				$html .= "<p style=\"text-align:center;\">Today's unmarked e-registers:</p>";
 				
 				//Load e-registers waiting for marking for today only
 				$registers = new ebs_tutor_registers_collection($ebs_user->get_staff_code(), date_create(), true, false);
@@ -121,13 +121,15 @@ class block_ebs_agent extends block_base {
 					$html .= "<hr />";
 					$html .= "<p style=\"text-align:center;\">You have <strong>$previous_unmarked_registers</strong> previous unmarked register(s) oustanding.</p>";
 					
-				}									
+				}
+
+                $html .= "</div>";
 			}
 			
 			//Build the content
 			$this->content = new stdClass;									
 			$this->content->text = $html;
-			$this->content->footer = "";			
+			$this->content->footer = "";
 		}
 		
 		return $this->content;
@@ -164,8 +166,8 @@ class block_ebs_agent extends block_base {
 			$width = $data->preferred_width;
 		
 			if(!empty($width)) {			
-				if(preg_match("^([0-9]+)$", $width)) {
-					if($width < 200 || $width > 1000) {
+				if(preg_match("/^([0-9]+)$/", $width)) {
+					if($width < 180 || $width > 210) {
 						$result = false;
 					}
 				} else {
@@ -201,19 +203,10 @@ class block_ebs_agent extends block_base {
 		$width = 200;
 		
 		if(isset($CFG->preferred_width)) {
-			$width = $CFG->preferred_width;
+			$width = (int)$CFG->preferred_width;
 		}
 		
 		return $width;
-	}
-	
-	/**
-	 NOTE: The development documentation says you should not override this method. However, failure to do so results in a "self test failed"
-	 message on the admin page regardless of whether the block actually works or not. Calls are made to methods, such as get_content(), during
-	 the base implementation of _self_test() which will always fail in that context. Not very clever, Moodle.
-	*/
-	function _self_test() {
-		return true;
 	}
 }
 ?>
