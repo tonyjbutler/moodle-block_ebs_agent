@@ -27,7 +27,7 @@ class ebs_base_object {
 		$this->is_configured = true;
 	
 		if(!ebs_utility::is_connection_valid($this->db_host_name, $this->db_user_name, $this->db_password)) {
-			die("The database credentials provided are not valid.");
+			//die("The database credentials provided are not valid.");
 		}
 	}
 	

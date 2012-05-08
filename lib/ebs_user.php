@@ -48,7 +48,7 @@ class ebs_user extends ebs_base_object {
 		//Trap errors
 		if(!$statement) {
 			$error = oci_error();
-			die("An error was encountered loading user details for " . $this->username . ": " . $error["message"]);
+			//die("An error was encountered loading user details for " . $this->username . ": " . $error["message"]);
 		}
 		
 		//Bind the user name
@@ -57,7 +57,7 @@ class ebs_user extends ebs_base_object {
 		//Execute the query
 		if(!oci_execute($statement, OCI_DEFAULT)) {
 			$error = oci_error();
-			die("An error was encountered executing user details query " . $this->username . ": " . $error["message"]);
+			//die("An error was encountered executing user details query " . $this->username . ": " . $error["message"]);
 		}	
 		
 		$row = oci_fetch_array($statement, OCI_RETURN_NULLS);
