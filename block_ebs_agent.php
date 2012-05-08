@@ -45,7 +45,7 @@ class block_ebs_agent extends block_base {
 					$html .= "<p style=\"text-align:center;\">";				
 					
 					if(!empty($header_image)) {
-						$html .= "<img style=\"width:45px;height:45px;vertical-align:middle;margin:3px;\" src=\"" . $this->config->header_image_url . "\" />";				
+						$html .= "<img style=\"width:70px;height:45px;vertical-align:middle;margin-right:3px;\" src=\"" . $this->config->header_image_url . "\" />";
 					}
 					
 					if(!empty($header_text)) {
@@ -56,9 +56,9 @@ class block_ebs_agent extends block_base {
 					
 				}
 				
-				$html .= "<p style=\"text-align:center;\"><strong>" . date("dS M Y") . "</strong></p>";
+				$html .= "<p style=\"text-align:center;\"><strong>" . date("D jS M Y") . "</strong></p>";
 				$html .= "<p style=\"text-align:center;\"><strong>" . $USER->firstname . " " . $USER->lastname . "</strong></p>";
-				$html .= "<p style=\"text-align:center;\">Today's unmarked e-registers</p>";
+				$html .= "<p style=\"text-align:center;\">Today's unmarked e-registers:</p>";
 				
 				//Load e-registers waiting for marking for today only
 				$registers = new ebs_tutor_registers_collection($ebs_user->get_staff_code(), date_create(), true, false);
@@ -103,14 +103,15 @@ class block_ebs_agent extends block_base {
 					$html .= "<hr />";
 					$html .= "<p style=\"text-align:center;\">You have <strong>$previous_unmarked_registers</strong> previous unmarked register(s) oustanding.</p>";
 					
-				}		
-				
+				}
+
+				$html .= "</div>";
 			}
 			
 			//Build the content
 			$this->content = new stdClass;									
 			$this->content->text = $html;
-			$this->content->footer = "";			
+			$this->content->footer = "";
 		}
 		
 		return $this->content;
