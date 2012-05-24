@@ -101,7 +101,7 @@ class block_ebs_agent extends block_base {
 				if($previous_unmarked_registers > 0) {
 				
 					$html .= "<hr />";
-					$html .= "<p style=\"text-align:center;\">You have <strong>$previous_unmarked_registers</strong> previous unmarked register(s) oustanding.</p>";
+					$html .= "<p style=\"text-align:center;\">You have <strong>$previous_unmarked_registers</strong> previous unmarked register(s) outstanding.</p>";
 					
 				}
 
