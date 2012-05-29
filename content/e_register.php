@@ -367,7 +367,7 @@ print_header($page_title, "Mark e-Register", $page_title, "", "", false);
 	
 <?php
 
-print_footer();
+echo $OUTPUT->footer();
 
 function get_page_url($include_inactive, $display_photos) {
 

@@ -8,10 +8,11 @@
 
 include_once("../../../config.php");
 include_once("../lib/ebs_utility.php");
+require_once("../lib/fetch_db_config.php");
 
 global $CFG;
 
-$connection = ebs_utility::get_connection($CFG->db_host_name, $CFG->db_user_name, $CFG->db_password);
+$connection = ebs_utility::get_connection($ebs_db_host, $ebs_db_user, $ebs_db_password);
 
 //Get some information about the blob we're looking for
 $domain = $_GET["domain"];
