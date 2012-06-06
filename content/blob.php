@@ -65,6 +65,7 @@ if($data) {
 oci_close($connection);
 
 //Stream to the client
+ob_clean();
 header("Content-type: image/JPEG");
 echo $binary_data;
 ?>

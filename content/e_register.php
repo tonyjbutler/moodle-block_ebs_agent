@@ -13,6 +13,12 @@ require_once("../lib/fetch_db_config.php");
 //Make sure the user is logged in 
 require_login();
 
+$PAGE->set_context(get_context_instance(CONTEXT_SYSTEM));
+
+$register_event_slot_id = optional_param('slot_id', 0, PARAM_INT);
+$pageurl = new moodle_url('/blocks/ebs_agent/content/e_register.php', array('slot_id' => $register_event_slot_id));
+$PAGE->set_url($pageurl);
+
 //Get request information
 if(isset($_GET["slot_id"]) && ebs_utility::is_integer($_GET["slot_id"])) {
 	$register_event_slot_id = $_GET["slot_id"];
@@ -25,7 +31,7 @@ if(isset($_GET["include_inactive"]) && $_GET["include_inactive"] == "1") {
 	$include_inactive = true;
 }
 
-$idisplay_photos = false;
+$display_photos = false;
 if(isset($_GET["display_photos"]) && $_GET["display_photos"] == "1") {
 	$display_photos = true;
 }
@@ -61,9 +67,17 @@ $default_progress_code = ebs_registers_utility::get_default_register_progress_co
 $usages = ebs_registers_utility::get_usage_codes("L");
 
 $page_title = $register_summary->get_title();
+$regcode = $register_summary->get_short_description();
+
+$PAGE->set_pagelayout('standard');
+$PAGE->set_title($page_title);
+$PAGE->set_heading('Marking e-register for ' . $regcode);
+
+$PAGE->navbar->add(get_string('pluginname', 'block_ebs_agent'));
+$PAGE->navbar->add($regcode, $pageurl);
 
 //Print the page header
-print_header($page_title, "Mark e-Register", $page_title, "", "", false);
+echo $OUTPUT->header();
 
 ?>		
 

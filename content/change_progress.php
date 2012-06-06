@@ -47,7 +47,7 @@ $progress_codes = ebs_registers_utility::get_register_progress_codes();
 <body onload="get_learner_progress_values(<?php echo $index; ?>,<?php echo $is_new_learner ? "true" : "false"; ?>)">
 	<div id="page">
 		<div id="header" class="clearfix">
-			<h3 class="headermain">Change process code</h3>
+			<h3 class="headermain">Change progress code</h3>
 		</div>
 	
 		<div id="content" class="ebs_progress_code_change">			
