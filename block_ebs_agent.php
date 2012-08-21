@@ -29,9 +29,6 @@ class block_ebs_agent extends block_base {
 			$html = "";
 			
 			if($ebs_user->is_valid_user() && $ebs_user->is_member_of_staff()) {
-			
-				//Register the CSS/Javascript used by the block
-				ebs_utility::register_stylesheet("blocks/ebs_agent/block_ebs_agent.css");				
 				
 				//Build up the block HTML							
 				$html .= "<div class=\"ebs_agent_block\">";
