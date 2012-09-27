@@ -13,6 +13,13 @@ class block_ebs_agent extends block_base {
 		$this->title = "ebs4 e-registers";
 	}
 
+    /**
+     * Which page types this block may appear on
+     * @return array
+     */
+    public function applicable_formats() {
+        return array('my-index' => true);
+    }
 
 	public function get_content() {
 
