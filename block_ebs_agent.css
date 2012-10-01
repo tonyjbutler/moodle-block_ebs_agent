@@ -92,7 +92,8 @@ table.ebs_register {
 	padding:2px;
 	border-collapse:separate;
 	border-spacing:2px;
-	width:960px;
+	width: 100%;
+    max-width: 960px;
 	margin:0px auto 0px auto;
 }
 
@@ -144,12 +145,12 @@ table.ebs_register input {
 }
 
 div.ebs_register_footer {
-	width:960px;
+	width: 100%;
+    max-width: 960px;
 	margin:10px auto 0px auto;	
 }
 
 div.ebs_register_footer .buttons {
-	width:220px;
 	float:right;
 	text-align:right;	
 }
@@ -163,7 +164,6 @@ div.ebs_register_footer .buttons button.default {
 }
 
 div.ebs_register_footer .options {
-	width:600px;
 	float:left;	
 	line-height:150%;
 }

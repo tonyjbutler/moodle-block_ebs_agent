@@ -100,17 +100,17 @@ echo $OUTPUT->header();
 			<table class="ebs_register">
 			<thead>
 				<tr>				
-					<td style="width:100px;text-align:right;">Person Code</td>
+					<td style="text-align:right;">Person Code</td>
 				
 					<?php if($display_photos) { ?>
-					<td style="width:70px;">
+					<td style="width:72px;">
 						&nbsp;
 					</td>					
 					<?php } ?>
 				
 					<td>Name</td>									
-					<td style="width:110px;" class="centered">Progress</td>
-					<td style="width:90px;" class="centered">
+					<td class="centered">Progress</td>
+					<td class="centered">
 					<?php
 						if(count($previous_slots) == 3) {
 							echo $previous_slots[0]->get_date();
@@ -119,7 +119,7 @@ echo $OUTPUT->header();
 						}
 					?>
 					</td>
-					<td style="width:90px;" class="centered">
+					<td class="centered">
 					<?php
 						if(count($previous_slots) > 1) {
 							echo $previous_slots[count($previous_slots) - 2]->get_date();
@@ -128,7 +128,7 @@ echo $OUTPUT->header();
 						}
 					?>
 					</td>
-					<td style="width:90px;" class="centered">
+					<td class="centered">
 					<?php
 						if(count($previous_slots) > 0) {
 							echo $previous_slots[count($previous_slots) - 1]->get_date();
@@ -137,7 +137,7 @@ echo $OUTPUT->header();
 						}
 					?>
 					</td>
-					<td style="width:150px;" class="today centered">
+					<td style="width:245px;" class="today centered">
 						Today
 						<a href="javascript:do_fill_down('<?php echo $preserve_existing_marks; ?>',new Array('usage_code[]','new_learner_usage_code[]'));" title="Fill down">
 							<img src="../resources/icons/filldown.gif" alt="Fill down" />
