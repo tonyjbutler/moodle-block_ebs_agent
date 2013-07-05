@@ -7,7 +7,7 @@ global $DB;
 require_once($CFG->libdir . "/blocklib.php");
 
 //Load the ebs Agent block so we can access the database connectivity details
-$conditions = array("blockname" => "ebs_agent");
+$conditions = array("blockname" => "ebs_agent", "parentcontextid" => 1);
 $block_data = $DB->get_record("block_instances", $conditions, "*", MUST_EXIST);
 $block_instance = block_instance("ebs_agent", $block_data);
 
