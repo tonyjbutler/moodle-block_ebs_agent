@@ -26,6 +26,11 @@ div.ebs_agent_block td.mark {
 	text-align:center;
 }
 
+/* Nasty hack to hide editing icons from users */
+.block_ebs_agent .header .commands {
+    display: none;
+}
+
 /**
 	CONFIG STYLES
 */
